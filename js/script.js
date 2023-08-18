@@ -172,4 +172,13 @@ window.onload = function(){
      swVisual.slideTo(videoIndex);
     })
    })
+   //비지니스 슬라이드
+   const swBusiness = new Swiper(".swBusiness",{
+    loop:true,
+    speed:500,
+    autoplay:{
+      delay:2500,
+      disableOnInteraction:false,
+    }
+   })
 };
