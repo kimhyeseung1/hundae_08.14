@@ -33,6 +33,104 @@ body {
   min-width: 780px;
   height: 2000px;
 }
+body{
+  /* 모달 떴을때 뒤에 스크롤 되 않도록 하려고 한다 */
+  overflow-y: hidden;
+}
+body.active{
+  overflow-y: auto;
+}
+/* 안내창 */
+.modal-wrap {
+  font-family: "Noto Sans KR", Helvetica, "맑은 고딕", "malgun gothic",
+    "Apple SD Gothic Neo", sans-serif;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+}
+.modal-main {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 500px;
+  height: 400px;
+  border-radius: 20px;
+  background-color: #fff;
+  transform: translate(-50%, -50%);
+}
+.modal-logo {
+}
+.modal-notice {
+  padding: 73px 30px 23px 30px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: -1.2px;
+}
+.modal-notice strong {
+  color: #e31a5a;
+  background: linear-gradient(to top, #ffe400 20%, transparent 30%);
+}
+.modal-notice span {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 8px;
+  letter-spacing: -0.8px;
+}
+.modal-corrections {
+  width: 440px;
+  height: 135px;
+  font-size: 13px;
+  line-height: 20px;
+  overflow: auto;
+  background-color: #eee;
+  padding: 15px 20px;
+  margin: 0 auto;
+}
+.modal-corrections strong {
+  display: block;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 3px;
+  line-height: 30px;
+}
+.corrctions-number{
+  float: left;
+  width: 6%;
+}
+.corrctions-txt{
+  float: right;
+  width: 94%;
+}
+.modal-close{
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+  transform: translateX(-50%);
+  width: 502px;
+  height: 45px;
+  background-color: #f8ebe1;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  color: #000;
+  cursor: pointer;
+  border-radius: 0 0 19px 19px;
+  line-height: 45px;
+}
+.modal-close i{
+  margin-left: 3px;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+}
 /* 공통요소 */
 .wrap {
   position: relative;
@@ -636,30 +734,31 @@ body {
 }
 .sitemap > ul > li{
     width: 20%;
+    
 }
 .sitemap-category{
     display: block;
     font-size: 16px;
     font-weight: 500;
-    letter-spacing:  -0.87px;
+    letter-spacing: -0.8px;
     color: #fff;
     margin-bottom: 25px;
-}
-.sitemap > ul > li > ul > li{
- margin-bottom: 25px;
 
 }
-.sitemap > ul > li > ul > li > a{
+.sitemap > ul > li > ul > li{
+    margin-bottom: 25px;
+}
+.sitemap > ul > li > ul> li> a{
     display: block;
     font-size: 16px;
     font-weight: 500;
     letter-spacing: -0.8px;
     color: #a2a2a2;
 }
-.sitemap strong{
+.sitemap strong {
     color: rgb(0,176,82);
 }
-.copy{
+.copy {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -676,9 +775,10 @@ body {
 }
 .copy-right{
     text-align: right;
+
 }
 .footer-lang{
-    display:inline-block;
+    display: inline-block;
     width: 63px;
     line-height: 24px;
     font-size: 16px;
@@ -686,10 +786,12 @@ body {
     font-weight: normal;
     letter-spacing: -0.8px;
     color: #fff;
+
 }
 .footer-lang-focus{
     background-color: #fff;
     color: #000;
+
 }
 .footer-copy{
     display: block;
@@ -699,7 +801,7 @@ body {
     letter-spacing: -0.8px;
     color: #a2a2a2;
 }
-@media screen and (max-width:880px){
+@media screen and (max-width:880px) {
     .copy{
         flex-wrap: wrap;
     }
@@ -711,5 +813,6 @@ body {
     .copy-right{
         width: 100%;
         text-align: center;
+        
     }
 }
